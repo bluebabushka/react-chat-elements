@@ -10,7 +10,7 @@ const AudioMessage: React.FC<IAudioMessageProps> = props => {
     <div className={'rce-mbox-audio'} style={props.customStyle}>
         <AudioPlayer
             src={props.data.audioURL}
-            layout="horizontal-reverse"
+            layout="horizontal"
             showJumpControls={false}
             customAdditionalControls={[]}
             customVolumeControls={[]}
