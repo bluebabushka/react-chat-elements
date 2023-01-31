@@ -22,8 +22,8 @@ export const photoMessage: MessageType = {
     uri: `data:image/png;base64,${photo(150)}`,
     status: {
       click: true,
-      loading: 0.5,
-      download: false, //type === "video",
+      loading: 1,
+      download: true, //type === "video",
       error: false,
     },
     width: 300,

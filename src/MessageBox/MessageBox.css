@@ -212,7 +212,7 @@
   justify-content: flex-end;
   align-items: center;
   text-align: right;
-  color: rgba(0, 0, 0, 0.45);
+  /*color: rgba(0, 0, 0, 0.45);*/
   font-size: 12px;
   right: -4px;
   bottom: -5px;
@@ -235,7 +235,7 @@
   padding-top: 5px;
   padding-right: 3px;
   padding-bottom: 2px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.33), transparent);
+  /*background: linear-gradient(to top, rgba(0, 0, 0, 0.33), transparent);*/
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   color: #fff;
