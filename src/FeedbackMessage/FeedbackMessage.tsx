@@ -1,9 +1,9 @@
 import React from 'react'
 import { IAudioMessageProps } from '../type'
 import AudioPlayer from 'react-h5-audio-player';
-import './AudioMessage.css'
+import './FeedbackMessage.css'
 
-const AudioMessage: React.FC<IAudioMessageProps> = props => {
+const FeedbackMessage: React.FC<IAudioMessageProps> = props => {
   // const controlsList = props.data.controlsList
 
   return (
@@ -20,4 +20,4 @@ const AudioMessage: React.FC<IAudioMessageProps> = props => {
   )
 }
 
-export default AudioMessage
+export default FeedbackMessage

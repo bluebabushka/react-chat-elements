@@ -11,6 +11,7 @@ import MeetingMessage from '../MeetingMessage/MeetingMessage'
 import VideoMessage from '../VideoMessage/VideoMessage'
 import AudioMessage from '../AudioMessage/AudioMessage'
 import MeetingLink from '../MeetingLink/MeetingLink'
+import FeedbackMessage from "../FeedbackMessage/FeedbackMessage";
 
 import Avatar from '../Avatar/Avatar'
 
@@ -158,7 +159,7 @@ const MessageBox: React.FC<MessageBoxType> = ({ focus = false, notch = true, sty
             {props.type === 'meeting' && <MeetingMessage focus={focus} notch={notch} {...props} />}
             {props.type === 'audio' && <AudioMessage focus={focus} notch={notch} {...props} />}
 
-            {props.type === 'feedback' && <AudioMessage focus={focus} notch={notch} {...props} />}
+            {props.type === 'feedback' && <FeedbackMessage focus={focus} notch={notch} {...props} />}
 
             {props.type === 'meetingLink' && (
               <MeetingLink focus={focus} notch={notch} {...props} actionButtons={props?.actionButtons} />
