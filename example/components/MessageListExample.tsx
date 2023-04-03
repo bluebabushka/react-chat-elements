@@ -71,6 +71,7 @@ function MessageListExample() {
       case 9:
         Addmtype = 'feedback'
         break
+      case 10:
       default:
         Addmtype = 'text'
         setStatus('read')

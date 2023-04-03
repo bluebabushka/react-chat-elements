@@ -368,7 +368,7 @@ export const textMessage: MessageType = {
   type: 'text',
   id: String(Math.random()),
   position: token() >= 1 ? 'right' : 'left',
-  text: loremIpsum({ count: 1, units: 'sentences' }),
+  text: "Lorem ipsum dolor sit amet, bluebabushka.com www.bluebabushka.com https://bluebabushka.com http://bluebabushka.com consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, https://google.com quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   title: loremIpsum({ count: 2, units: 'words' }),
   focus: true,
   date: +new Date(),

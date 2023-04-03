@@ -23,29 +23,29 @@ import { format } from 'timeago.js'
 
 import classNames from 'classnames'
 import { MessageBoxType } from '../type'
+import LinkifyText from "../LinkifyText/LinkifyText";
 
 const MessageBox: React.FC<MessageBoxType> = ({ focus = false, notch = true, styles, ...props }) => {
-  const prevProps = useRef(focus)
-  const messageRef = useRef<HTMLDivElement>(null)
+    const prevProps = useRef(focus)
+    const messageRef = useRef<HTMLDivElement>(null)
 
     const positionCls = classNames('rce-mbox', {'rce-mbox-right': props.position === 'right'});
     const thatAbsoluteTime =
         !/(text|video|file|meeting|audio|feedback)/g.test(props.type || 'text') && !(props.type === 'location' && props.text);
     const dateText = props.date && (props.dateString || format(props.date))
 
-  useEffect(() => {
-    if (prevProps.current !== focus && focus === true) {
-      if (messageRef) {
-        messageRef.current?.scrollIntoView({
-          block: 'center',
-          behavior: 'smooth',
-        })
-
-        props.onMessageFocused(prevProps)
-      }
-    }
-    prevProps.current = focus
-  }, [focus, prevProps])
+    useEffect(() => {
+        if (prevProps.current !== focus && focus === true) {
+            if (messageRef) {
+                messageRef.current?.scrollIntoView({
+                    block: 'center',
+                    behavior: 'smooth',
+                })
+                props.onMessageFocused(prevProps)
+            }
+        }
+        prevProps.current = focus
+    }, [focus, prevProps])
 
   return (
     <div ref={messageRef} className={classNames('rce-container-mbox', props.className)} onClick={props.onClick}>
@@ -142,7 +142,7 @@ const MessageBox: React.FC<MessageBoxType> = ({ focus = false, notch = true, sty
                 })}
               >
                 {props.retracted && <MdBlock />}
-                {props.text}
+                <LinkifyText text={props.text} />
               </div>
             )}
 
