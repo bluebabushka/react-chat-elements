@@ -47,6 +47,10 @@ const MessageBox: React.FC<MessageBoxType> = ({ focus = false, notch = true, sty
     prevProps.current = focus
   }, [focus, prevProps])
 
+  if(props.type === 'feedback'){
+      console.table({props})
+  }
+
   return (
     <div ref={messageRef} className={classNames('rce-container-mbox', props.className)} onClick={props.onClick}>
       {/* {props.renderAddCmp instanceof Function && props.renderAddCmp()} */}
