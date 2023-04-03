@@ -1074,6 +1074,7 @@ export type MessageType =
   | ({ type: 'video' } & IVideoMessageProps)
   | ({ type: 'spotify' } & ISpotifyMessageProps)
   | ({ type: 'audio' } & IAudioMessageProps)
+  | ({ type: 'feedback' } & IAudioMessageProps)
   | ({ type: 'meetingLink' } & IMeetingLinkMessageProps)
   | ({ type: 'file' } & IFileMessageProps)
   | ({ type: 'text' } & ITextMessageProps)

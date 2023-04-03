@@ -29,7 +29,7 @@ const MessageBox: React.FC<MessageBoxType> = ({ focus = false, notch = true, sty
 
   var positionCls = classNames('rce-mbox', { 'rce-mbox-right': props.position === 'right' })
   var thatAbsoluteTime =
-    !/(text|video|file|meeting|audio)/g.test(props.type || 'text') && !(props.type === 'location' && props.text)
+    !/(text|video|file|meeting|audio|feedback)/g.test(props.type || 'text') && !(props.type === 'location' && props.text)
   const dateText = props.date && (props.dateString || format(props.date))
 
   useEffect(() => {
@@ -157,6 +157,8 @@ const MessageBox: React.FC<MessageBoxType> = ({ focus = false, notch = true, sty
 
             {props.type === 'meeting' && <MeetingMessage focus={focus} notch={notch} {...props} />}
             {props.type === 'audio' && <AudioMessage focus={focus} notch={notch} {...props} />}
+
+            {props.type === 'feedback' && <AudioMessage focus={focus} notch={notch} {...props} />}
 
             {props.type === 'meetingLink' && (
               <MeetingLink focus={focus} notch={notch} {...props} actionButtons={props?.actionButtons} />
