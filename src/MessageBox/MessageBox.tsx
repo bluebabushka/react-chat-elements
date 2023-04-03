@@ -157,6 +157,7 @@ const MessageBox: React.FC<MessageBoxType> = ({ focus = false, notch = true, sty
             {props.type === 'spotify' && <SpotifyMessage focus={focus} notch={notch} {...props} />}
 
             {props.type === 'meeting' && <MeetingMessage focus={focus} notch={notch} {...props} />}
+
             {props.type === 'audio' && <AudioMessage focus={focus} notch={notch} {...props} />}
 
             {props.type === 'feedback' && <FeedbackMessage focus={focus} notch={notch} {...props} />}

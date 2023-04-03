@@ -8,6 +8,7 @@ import SystemMessage from './SystemMessage/SystemMessage'
 import ReplyMessage from './ReplyMessage/ReplyMessage'
 import MeetingMessage from './MeetingMessage/MeetingMessage'
 import AudioMessage from './AudioMessage/AudioMessage'
+import FeedbackMessage from './FeedbackMessage/FeedbackMessage';
 import FileMessage from './FileMessage/FileMessage'
 import LocationMessage from './LocationMessage/LocationMessage'
 import SpotifyMessage from './SpotifyMessage/SpotifyMessage'
@@ -34,6 +35,7 @@ export {
   ReplyMessage,
   MeetingMessage,
   AudioMessage,
+  FeedbackMessage,
   FileMessage,
   LocationMessage,
   SpotifyMessage,

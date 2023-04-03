@@ -399,6 +399,46 @@ export interface IAudioMessageProps extends IAudioMessage {
 }
 
 /**
+ * IFeedbackMessage Interface extends IMessage
+ * @prop type The Feedback Message's type is "audio" and required.
+ * @prop audioURL The Feedback Message's audio url and required.
+ * @prop audioType The Feedback Message's audio type and optional.
+ * @prop controlsList The Feedback Message's controls list and optional.
+ */
+export interface IFeedbackMessage extends IMessage {
+    data: {
+        audioURL?: string
+        extension?: string
+        name?: string
+        size?: string
+        duration?: number
+        id?: string
+        audioType?: 'audio/mp3' | string
+        controlsList?: string
+    }
+}
+
+/**
+ * IFeedbackMessageProps Interface
+ * @prop type The Feedback Message's type is "audio" and required.
+ * @prop message The Feedback Message's message is a IFeedbackMessage and required.
+ * @prop audioProps The Feedback Message's audioProps and optional.
+ * @prop customStyle The Feedback Message's customStyle and optional.
+ * @prop onOpen The Feedback Message's function onOpen(event: React.MouseEvent<T, MouseEvent>) and optional.
+ * @prop onDownload The Feedback Message's function onDownload(event: React.MouseEvent<T, MouseEvent>) and optional.
+ * @prop onLoad The Feedback Message's function onLoad(event: React.SyntheticEvent<T, Event>) and optional.
+ */
+export interface IFeedbackMessageProps extends IFeedbackMessage {
+    audioProps?: {
+        [key: string]: unknown
+    }
+    customStyle?: any
+    onOpen?: React.MouseEventHandler
+    onDownload?: React.MouseEventHandler
+    onLoad?: React.ReactEventHandler
+}
+
+/**
  * IFileMessage Interface
  * @prop type The File Message's type is "file" and required.
  * @prop size The File Message's size and optional.
@@ -1067,6 +1107,7 @@ export interface INavbarProps {
  * @type ITextMessageProps
  * @type ISystemMessageProps
  * @type IMeetingMessageProps
+ * @type IFeedbackMessageProps
  */
 export type MessageType =
   | ({ type: 'location' } & ILocationMessageProps)
@@ -1074,7 +1115,7 @@ export type MessageType =
   | ({ type: 'video' } & IVideoMessageProps)
   | ({ type: 'spotify' } & ISpotifyMessageProps)
   | ({ type: 'audio' } & IAudioMessageProps)
-  | ({ type: 'feedback' } & IAudioMessageProps)
+  | ({ type: 'feedback' } & IFeedbackMessageProps)
   | ({ type: 'meetingLink' } & IMeetingLinkMessageProps)
   | ({ type: 'file' } & IFileMessageProps)
   | ({ type: 'text' } & ITextMessageProps)
@@ -1091,6 +1132,7 @@ export class PhotoMessage extends React.Component<IPhotoMessageProps> {}
 export class VideoMessage extends React.Component<IVideoMessageProps> {}
 export class SpotifyMessage extends React.Component<ISpotifyMessageProps> {}
 export class AudioMessage extends React.Component<IAudioMessageProps> {}
+export class FeedbackMessage extends React.Component<IFeedbackMessageProps> {}
 export class MeetingLink extends React.Component<IMeetingLinkMessageProps> {}
 export class FileMessage extends React.Component<IFileMessageProps> {}
 export class TextMessage extends React.Component<ITextMessageProps> {}
