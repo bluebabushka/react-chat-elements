@@ -393,3 +393,39 @@ export const textMessage: MessageType = {
         }
       : undefined,
 }
+
+export const feedbackMessage: MessageType = {
+    type: 'feedback',
+    id: String(Math.random()),
+    position: token() >= 1 ? 'right' : 'left',
+    text: loremIpsum({ count: 1, units: 'sentences' }),
+    title: 'Feedback',
+    focus: true,
+    date: +new Date(),
+    dateString: 'now',
+    avatar: `data:image/png;base64,${photo(20)}`,
+    titleColor: getRandomColor(),
+    forwarded: true,
+    replyButton: true,
+    removeButton: true,
+    status: 'received',
+    notch: true,
+    copiableDate: true,
+    retracted: false,
+    className: '',
+    data: {
+        audioURL: 'https://www.w3schools.com/html/horse.mp3',
+        audioType: 'audio/mp3',
+        controlsList: 'nodownload',
+    },
+    reply:
+        token() >= 1
+            ? {
+                photoURL: token() >= 1 ? `data:image/png;base64,${photo(150)}` : null,
+                title: loremIpsum({ count: 2, units: 'words' }),
+                titleColor: getRandomColor(),
+                message: loremIpsum({ count: 1, units: 'sentences' }),
+            }
+            : undefined,
+}
+

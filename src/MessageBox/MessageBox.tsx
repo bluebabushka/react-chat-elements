@@ -28,10 +28,10 @@ const MessageBox: React.FC<MessageBoxType> = ({ focus = false, notch = true, sty
   const prevProps = useRef(focus)
   const messageRef = useRef<HTMLDivElement>(null)
 
-  var positionCls = classNames('rce-mbox', { 'rce-mbox-right': props.position === 'right' })
-  var thatAbsoluteTime =
-    !/(text|video|file|meeting|audio|feedback)/g.test(props.type || 'text') && !(props.type === 'location' && props.text)
-  const dateText = props.date && (props.dateString || format(props.date))
+    const positionCls = classNames('rce-mbox', {'rce-mbox-right': props.position === 'right'});
+    const thatAbsoluteTime =
+        !/(text|video|file|meeting|audio|feedback)/g.test(props.type || 'text') && !(props.type === 'location' && props.text);
+    const dateText = props.date && (props.dateString || format(props.date))
 
   useEffect(() => {
     if (prevProps.current !== focus && focus === true) {

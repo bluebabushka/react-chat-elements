@@ -14,6 +14,7 @@ import {
   systemMessage,
   textMessage,
   videoMessage,
+  feedbackMessage
 } from '../utils/MessageTypes'
 
 let clearRef = () => {}
@@ -67,6 +68,9 @@ function MessageListExample() {
       case 8:
         Addmtype = 'meetingLink'
         break
+      case 9:
+        Addmtype = 'feedback'
+        break
       default:
         Addmtype = 'text'
         setStatus('read')
@@ -100,6 +104,8 @@ function MessageListExample() {
         return meetingLinkMessage
       case 'text':
         return textMessage
+      case 'feedback':
+        return feedbackMessage
       default:
         break
     }
@@ -135,7 +141,8 @@ function MessageListExample() {
           defaultValue=''
           referance={inputReferance}
           clear={(clear: any) => (clearRef = clear)}
-          maxHeight={50}
+          maxHeight={150}
+          multiline={true}
           onKeyPress={(e: any) => {
             if (e.shiftKey && e.charCode === 13) {
               return true

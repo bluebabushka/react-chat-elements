@@ -6,6 +6,8 @@ import './FeedbackMessage.css'
 const FeedbackMessage: React.FC<IFeedbackMessageProps> = props => {
   // const controlsList = props.data.controlsList
 
+ console.log(props.text);
+
   return (
     <div className={'rce-mbox-audio'} style={props.customStyle}>
         <AudioPlayer
